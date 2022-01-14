@@ -1,5 +1,6 @@
 const CategoryService = require('./services/CategoryService')
 const ProductService = require('./services/ProductService')
+const OrderService = require('./services/OrderService')
 
 const app = (message) => {
   const listParams = message.split('-|-')
@@ -17,6 +18,14 @@ const app = (message) => {
         return 'listCategories'
       }
       return 'getOrder'
+    case 'showOrder':
+      OrderService.showOrder(listParams[1])
+      const deleteProduct = OrderService.deleteProduct(listParams[1])
+      if (deleteProduct) {
+        return `deleteProduct-|-${deleteProduct}`
+      }
+      const closeOrder = OrderService.closeOrder()
+      return `closeOrder-|-${closeOrder}`
     case 'ERROR':
       return console.log(listParams[1])
   }

@@ -48,7 +48,6 @@ amqp.connect(connectionUrl, (error0, connection) => {
         noAck: true
       })
 
-      console.log(request)
       channel.sendToQueue(queue,
         Buffer.from(request), {
         correlationId: correlationId,

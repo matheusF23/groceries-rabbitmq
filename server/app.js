@@ -1,5 +1,6 @@
 const CategoryService = require('./services/CategoryService')
 const ProductService = require('./services/ProductService')
+const OrderService = require('./services/OrderService')
 
 const app = (message) => {
   const listParams = message.split('-|-')
@@ -11,7 +12,11 @@ const app = (message) => {
     case 'chosenCategory':
       const category = listParams[1]
       const products = JSON.stringify(ProductService.getProductsByCategory(category))
-      return`listAndChooseProduct-|-${products}`
+      return `listAndChooseProduct-|-${products}`
+    case 'chosenProduct':
+      const { productId, productQuantity } = JSON.parse(listParams[1])
+      OrderService.addProduct(productId, productQuantity)
+      return 'addAnotherProduct'
     default:
       return "ERROR-|-Comando não reconhecido\n"
   }

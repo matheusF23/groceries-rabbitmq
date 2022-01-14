@@ -11,6 +11,12 @@ const app = (message) => {
     case 'listAndChooseProduct':
       const userChoice = JSON.stringify(ProductService.listAndChooseProduct(listParams[1]))
       return `chosenProduct-|-${userChoice}`
+    case 'addAnotherProduct':
+      const userAnswer = ProductService.addAnotherProduct()
+      if (userAnswer === '1') {
+        return 'listCategories'
+      }
+      return 'getOrder'
     case 'ERROR':
       return console.log(listParams[1])
   }

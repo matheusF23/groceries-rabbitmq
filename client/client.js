@@ -37,7 +37,6 @@ amqp.connect(connectionUrl, (error0, connection) => {
               process.exit(0)
             }, 500)
           } else {
-            console.log(request)
             channel.sendToQueue(queue,
               Buffer.from(request), {
               correlationId: correlationId,

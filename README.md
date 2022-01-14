@@ -8,7 +8,7 @@ Esta aplicação é uma implementação do rabbitmq com NodeJS para exemplificar
 
 Use o comando para clonar o projeto em seu computador
 ```
-$ git clone git@github.com:matheusF23/groceries-grpc.git
+$ git clone git@github.com:matheusF23/groceries-rabbitmq.git
 ```
 
 ## Instalação das dependências

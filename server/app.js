@@ -23,6 +23,13 @@ const app = (message) => {
     case 'deleteProduct':
       const newOrder = JSON.stringify(OrderService.deleteProduct(listParams[1]))
       return `showOrder-|-${newOrder}`
+    case 'closeOrder':
+      const closeOrder = listParams[1]
+      if (closeOrder === '2') return 'addAnotherProduct'
+      if (closeOrder === '1') {
+        OrderService.clearOrder()
+        return 'orderClosed'
+      }
     default:
       return "ERROR-|-Comando não reconhecido\n"
   }

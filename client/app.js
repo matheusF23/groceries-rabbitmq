@@ -26,6 +26,10 @@ const app = (message) => {
       }
       const closeOrder = OrderService.closeOrder()
       return `closeOrder-|-${closeOrder}`
+    case 'orderClosed':
+      console.log("Pedido finalizado com sucesso! Volte Sempre!")
+      return 'finished'
+      break
     case 'ERROR':
       return console.log(listParams[1])
   }

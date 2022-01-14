@@ -31,7 +31,7 @@ amqp.connect(connectionUrl, (error0, connection) => {
           const message = msg.content.toString().trim()
           const request = app(message)
 
-          if (message.split('-|-')[0] === 'ERROR') {
+          if (message.split('-|-')[0] === 'ERROR' || request === 'finished') {
             setTimeout(() => {
               connection.close()
               process.exit(0)

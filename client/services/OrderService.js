@@ -29,7 +29,7 @@ class OrderService {
       chosenOption = prompt('Escolha um número válido! ')
     }
 
-    if(chosenOption === '1') {
+    if (chosenOption === '1') {
       const orderObj = JSON.parse(order)
 
       console.log('\nEscolha o produto!')

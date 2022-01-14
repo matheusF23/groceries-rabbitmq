@@ -19,7 +19,7 @@ amqp.connect(connectionUrl, (error0, connection) => {
 
     channel.assertQueue(queue, { durable: false })
     channel.prefetch(1)
-    
+
     console.log('Server is running')
 
     channel.consume(queue, function reply(msg) {

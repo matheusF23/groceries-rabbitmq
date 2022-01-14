@@ -13,7 +13,7 @@ class CategoryService {
 
     console.log()
     let chosenCategory = prompt('Responda: ')
-    while (!categoryKeys.includes(chosenCategory)){
+    while (!categoryKeys.includes(chosenCategory)) {
       chosenCategory = prompt('Escolha um número válido! ')
     }
 

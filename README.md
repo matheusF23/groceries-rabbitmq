@@ -30,7 +30,8 @@ $ docker-compose up
 
 Com isso, o rabbitmq já deve estar sendo executado. Para saber se está tudo certo, basta acessar via navegador: `http://localhost:15672`. Deve aparecer uma área de login do rabbitmq!
 
-Estando na pasta do projeto é necessário executar o servidor e o cliente. Para executar o servidor utilize:
+Uma vez que o rabbitmq está funcionando corretamente e estando na pasta do projeto é necessário executar o servidor e o cliente. Para executar o servidor utilize:
+
 ```
 $ yarn server
 ```
@@ -39,3 +40,9 @@ Para executar o cliente utilize:
 ```
 $ yarn client
 ```
+
+# Fluxo de execução
+
+O projeto objetiva realizar o seguinte fluxo:
+
+![image](https://user-images.githubusercontent.com/54044801/145727206-000994d0-828f-4166-8769-2a0b08eed8dc.png)

@@ -17,9 +17,12 @@ const app = (message) => {
       const { productId, productQuantity } = JSON.parse(listParams[1])
       OrderService.addProduct(productId, productQuantity)
       return 'addAnotherProduct'
-      case 'getOrder':
-        const order = JSON.stringify(OrderService.getOrder())
-        return `showOrder-|-${order}`
+    case 'getOrder':
+      const order = JSON.stringify(OrderService.getOrder())
+      return `showOrder-|-${order}`
+    case 'deleteProduct':
+      const newOrder = JSON.stringify(OrderService.deleteProduct(listParams[1]))
+      return `showOrder-|-${newOrder}`
     default:
       return "ERROR-|-Comando não reconhecido\n"
   }

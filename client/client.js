@@ -26,6 +26,10 @@ amqp.connect(connectionUrl, (error0, connection) => {
       const queue = 'groceries'
       const request = 'listCategories'
 
+      console.log('###################################')
+      console.log('# Seja bem vindo ao mercadinho SD #')
+      console.log('###################################')
+
       channel.consume(q.queue, msg => {
         if (msg.properties.correlationId === correlationId) {
           const message = msg.content.toString().trim()

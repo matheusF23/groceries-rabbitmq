@@ -8,7 +8,9 @@ class OrderService {
   }
 
   static showOrder(order) {
-    console.log('\nAqui está o seu pedido!')
+    console.log('\n###########################')
+    console.log('# Aqui está o seu pedido! #')
+    console.log('###########################')
 
     const orderObj = JSON.parse(order)
 

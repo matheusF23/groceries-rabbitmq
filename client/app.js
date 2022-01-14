@@ -27,7 +27,9 @@ const app = (message) => {
       const closeOrder = OrderService.closeOrder()
       return `closeOrder-|-${closeOrder}`
     case 'orderClosed':
-      console.log("Pedido finalizado com sucesso! Volte Sempre!")
+      console.log('\n################################################')
+      console.log('# Pedido finalizado com sucesso! Volte Sempre! #')
+      console.log('################################################')
       return 'finished'
       break
     case 'ERROR':

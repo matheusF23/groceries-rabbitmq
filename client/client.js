@@ -24,24 +24,32 @@ amqp.connect(connectionUrl, (error0, connection) => {
 
       const correlationId = uuidv4()
       const queue = 'groceries'
-      let request = 'listCategories'
+      const request = 'listCategories'
 
       channel.consume(q.queue, msg => {
         if (msg.properties.correlationId === correlationId) {
           const message = msg.content.toString().trim()
-          request = app(message)
+          const request = app(message)
 
           if (message.split('-|-')[0] === 'ERROR') {
             setTimeout(() => {
               connection.close()
               process.exit(0)
             }, 500)
+          } else {
+            console.log(request)
+            channel.sendToQueue(queue,
+              Buffer.from(request), {
+              correlationId: correlationId,
+              replyTo: q.queue
+            })
           }
         }
       }, {
         noAck: true
       })
 
+      console.log(request)
       channel.sendToQueue(queue,
         Buffer.from(request), {
         correlationId: correlationId,

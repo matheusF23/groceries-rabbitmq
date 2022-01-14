@@ -24,6 +24,7 @@ amqp.connect(connectionUrl, (error0, connection) => {
 
     channel.consume(queue, function reply(msg) {
       const message = msg.content.toString().trim()
+      console.log(`Messagem Recebida: ${message}`)
 
       const response = app(message)
 

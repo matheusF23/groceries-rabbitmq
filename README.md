@@ -1,6 +1,6 @@
 **Participantes**: [Gilson Santos](https://github.com/gilsonsantos03) e [Matheus Figueiredo](https://github.com/matheusF23)
 
-# Groceries gRPC
+# Groceries rabbitmq
 
 Esta aplicação é uma implementação do rabbitmq com NodeJS para exemplificar uma comunicação cliente-servidor no cenário de um supermercado.
 
